@@ -1,29 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
 import { ItemDetailsPage } from '../item-details/item-details';
 
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html'
+  templateUrl: 'list.html',
+  
 })
+
+
+
 export class ListPage {
   icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  items: Array<{text: string, date: string, profile: string, name: string}>;
+  json: Tweet[];
+  lengthOfArray = Number;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, http: HttpClient) {
+    http.get<TweetFeed>("http://34.240.178.13:3000/user_timeline").subscribe(result => {
+        this.json = result.data;
+        this.items = [];
+        //console.log(this.json);
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for(let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+        for(let i = 0; i < this.json.length; i++) {
+          this.items.push({
+            text: this.json[i].text,
+            date: this.json[i].created_at,
+            profile: this.json[i].user.profile_image_url_https,
+            name: this.json[i].user.name
+          });
+        }
+    }, error => console.error(error));
+    
   }
 
   itemTapped(event, item) {
@@ -31,4 +43,19 @@ export class ListPage {
       item: item
     });
   }
+}
+
+interface TweetFeed {
+  data: Tweet[];
+}
+
+class TwitterUser {
+  profile_image_url_https: string;
+  name: string;
+}
+
+class Tweet{
+  text: string;
+  created_at: string;
+  user: TwitterUser;
 }

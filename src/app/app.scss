@@ -14,3 +14,100 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-card.item.item-block.card.card-md.item-md {
+    background: #000;
+    color: #fff !important;
+}
+
+ion-item.item.item-block.item-md {
+    background: #000 ;
+    color: #fff !important;
+}
+
+.item-md p {
+    color: #fff;
+}
+//#5d5b5b
+.logo{
+    display: block;
+    background-color: #080808;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#080808), to(#181818));
+    background-image: -webkit-linear-gradient(top, #080808, #181818); 
+    background-image: -moz-linear-gradient(top, #080808, #181818); 
+    background-image: -ms-linear-gradient(top, #080808, #181818); 
+    background-image: -o-linear-gradient(top, #080808, #181818); 
+    color: #585858;
+    width: 56px;
+    height: 56px;
+    position: relative;
+    text-align: center;
+    line-height: 144px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 8px #555555, inset 0px 2px 3px #000;
+    margin: auto;
+  }
+  
+  
+  .icon{
+      border-radius: 50%;
+      border: solid 1px #555;
+      padding: 5px;
+  }
+
+.toolbar-background.toolbar-background-md {
+    background: #000;
+    color: #fff;
+    border-bottom: solid 1px #555;
+    padding-bottom: 50px;
+}
+
+button.bar-buttons.bar-buttons-md.bar-button.bar-button-md.bar-button-default.bar-button-default-md.bar-button-menutoggle.bar-button-menutoggle-md {
+    color: #fff;
+}
+
+.toolbar-title.toolbar-title-md {
+    color: #fff;
+}
+
+.scroll-content{
+    background: #000;
+    color: #fff;
+}
+
+h1 { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+h2 {
+    color: #fff !important;
+}
+
+button.item.item-block.item-md {
+    background: #313131;
+    color: #fff;
+}
+
+.scroll-content {
+    background: #313131;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #333332; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #63615f; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.item-inner {
+    border: none !important;
+}
